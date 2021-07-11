@@ -1,0 +1,75 @@
+[include]
+    path=~/.gitconfig.local
+
+[alias]
+    lod = log --oneline --decorate --color
+    co = checkout
+    ci = commit
+    ap = add -p
+    am = commit --amend
+    unadd = reset HEAD --
+    tupper = stash --include-untracked
+    staged = diff --staged
+	mb = merge-base --fork-point
+	addcw = -c interactive.diffFilter=\"git diff --color-words\" add -p
+
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+[mergetool "vimdiff"]
+    cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+
+[mergetool]
+	prompt = false
+
+[diff]
+    tool = vimdiff
+
+[difftool]
+    prompt = false
+
+[init]
+	defaultBranch = main
+
+[interactive]
+	diffFilter = diffr
+
+[pager]
+	diff = diffr | less
+	log = diffr | less
+	show = diffr | less
+    
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[diff "rails_enc"]
+  textconv = rails encrypted:show
+  cachetextconv = false
+[user]
+	email = jc.256@outlook.com
+	name = Julio César Alcántara Sánchez
