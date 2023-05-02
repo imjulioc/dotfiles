@@ -1,0 +1,9 @@
+fzf 0.35.1
+java adoptopenjdk-18.0.2+101
+jq 1.6
+make 4.3
+python pypy3.9-7.3.9
+rust 1.62.1
+tmux 3.3
+vim 9.0.0079
+yq 4.33.1

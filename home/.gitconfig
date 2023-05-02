@@ -1,0 +1,43 @@
+[include]
+	path = ~/.gitconfig.local
+[init]
+	defaultBranch = main
+[interactive]
+	diffFilter = diffr
+[alias]
+	lod = log --oneline --decorate
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	process = git-lfs filter-process
+	smudge = git-lfs smudge -- %f
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false
+[pager]
+	diff = diffr | less
+	log = diffr | less
+	show = diffr | less
